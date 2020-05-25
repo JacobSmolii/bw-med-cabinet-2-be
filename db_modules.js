@@ -9,7 +9,8 @@ module.exports = {
     getLiked,
     addFeedBackBySpecificType,
     getAllTreated,
-    deleteUser
+    deleteUser,
+    editUser
 }
 
 function addUser(user) {
@@ -57,5 +58,11 @@ function getAllTreated() {
 function deleteUser (id) {
     return db('users')
         .where({id})
-        .delete('CASCADE')
+        .delete()
+}
+
+function editUser(id, {name}) {
+    return db('users')
+        .where({id})
+        .update({name})
 }

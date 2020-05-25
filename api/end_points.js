@@ -83,4 +83,19 @@ home_route.delete('/:id',(req, res) => {
         })
 })
 
+home_route.put('/:id',(req, res) => {
+    const {id} = req.params;
+
+    const data = req.body;
+
+    db.editUser(id, data)
+        .then(user => {
+            res.status(200).json({user})
+        })
+        .catch(err => {
+            res.status(204).json({message:"Can not update info because",err})
+        })
+
+})
+
 module.exports = home_route;

@@ -1,4 +1,4 @@
-const auth_route = require('express').Router();
+const   auth_route = require('express').Router();
 const db = require('../../db_modules');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -27,10 +27,12 @@ auth_route.post('/register', (req, res) => {
 auth_route.post('/login', (req, res) => {
     try {
         const credential = req.body;
-
         db.getUserById(credential.email)
             .then(user => {
+                console.log(credential.password, user.password)
+
                 if (user && bcrypt.compareSync(credential.password, user.password)) {
+
                     const token = generateToken(user);
                     res.cookie('token', token);
                     res.status(200).json({message: `Welcome back ${user.name}`})
