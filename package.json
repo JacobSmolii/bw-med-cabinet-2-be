@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/VladyslavHorbachenko/bw-med-cabinet-2-be/issues"
   },
-  "homepage": "https://github.com/VladyslavHorbachenko/bw-med-cabinet-2-be#readme",
+  "homepage": "http://med-cab-vlapetr.herokuapp.com/",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
