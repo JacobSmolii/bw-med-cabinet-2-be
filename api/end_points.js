@@ -95,7 +95,16 @@ home_route.put('/:id',(req, res) => {
         .catch(err => {
             res.status(204).json({message:"Can not update info because",err})
         })
+})
 
+home_route.get('/users', (req, res) => {
+    db.getAllUsers()
+        .then(users => {
+            res.status(200).json(users);
+        })
+        .catch(err => {
+            res.status(500).json({message:"Cannot fetch users",err})
+        })
 })
 
 module.exports = home_route;

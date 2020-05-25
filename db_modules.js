@@ -2,6 +2,7 @@ const db = require('./database/dbConfig')
 
 module.exports = {
     addUser,
+    getAllUsers,
     getUserById,
     getCannabisList,
     get_specific_type,
@@ -16,6 +17,10 @@ module.exports = {
 function addUser(user) {
     return db('users')
         .insert(user)
+}
+
+function getAllUsers() {
+    return db('users')
 }
 
 function getUserById(email) {

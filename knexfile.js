@@ -1,5 +1,6 @@
 // Update with your config settings.
 
+
 module.exports = {
 
   development: {
@@ -16,7 +17,21 @@ module.exports = {
     afterCreate:(conn,done) => {
       conn.run("PRAGMA foreign_key = ON",done)
     }
+  },
+
+  production: {
+    client: "sqlite3",
+    connection: process.env.DATABASE_URL,
+    pool: {
+      min: 2,
+      max: 10,
+    },
+    migrations: {
+      directory: "./database/migrations",
+    }
   }
+
 }
+
 
 

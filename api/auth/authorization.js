@@ -20,7 +20,7 @@ auth_route.post('/register', (req, res) => {
                 res.status(500).json({message: "Invalid credentials"});
             })
     } catch {
-        res.status(500).json({message: "Invalid credentials"});
+        res.status(500).json({message: "Invalid credentials you entered"});
     }
 })
 
