@@ -71,4 +71,16 @@ home_route.get('/:id/treated', (req, res) => {
         })
 })
 
+home_route.delete('/:id',(req, res) => {
+   const {id} = req.params;
+
+    db.deleteUser(id)
+        .then(user => {
+            res.status(200).json({message:`User ${id} has been  deleted`})
+        })
+        .catch(err => {
+            res.status(500).json({ message:"Sorry,can not delete user",err })
+        })
+})
+
 module.exports = home_route;

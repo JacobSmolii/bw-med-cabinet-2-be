@@ -8,7 +8,8 @@ module.exports = {
     addLiked,
     getLiked,
     addFeedBackBySpecificType,
-    getAllTreated
+    getAllTreated,
+    deleteUser
 }
 
 function addUser(user) {
@@ -36,7 +37,6 @@ function get_specific_type({Type}) { // dereference
 
 function addLiked(user_id, strain) {
     return db('liked')
-        // .insert(user_id, strain)
         .insert({user_id, can_strain: strain})
 }
 
@@ -52,4 +52,10 @@ function addFeedBackBySpecificType(liked_id, what_treated_name) {
 
 function getAllTreated() {
     return db('treated')
+}
+
+function deleteUser (id) {
+    return db('users')
+        .where({id})
+        .delete('CASCADE')
 }

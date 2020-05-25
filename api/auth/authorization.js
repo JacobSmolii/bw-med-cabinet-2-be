@@ -10,8 +10,11 @@ auth_route.post('/register', (req, res) => {
         credentials.password = bcrypt.hashSync(credentials.password);
 
         db.addUser(credentials)
-            .then(() => {
-                res.status(201).json({message: `${credentials.name} enjoy the App `})
+            .then(count => {
+                res.status(201).json({
+                    message: `${credentials.name} enjoy the App`,
+                    id: count
+                })
             })
             .catch(err => {
                 res.status(500).json({message: "Invalid credentials"});
@@ -20,16 +23,6 @@ auth_route.post('/register', (req, res) => {
         res.status(500).json({message: "Invalid credentials"});
     }
 })
-
-// auth_route.get('/', restricted, (req, res) => {
-//     db.getUsers()
-//         .then(users => {
-//             res.json(users);
-//         })
-//         .catch(() => {
-//             res.send('NOPE');
-//         })
-// })
 
 auth_route.post('/login', (req, res) => {
     try {
