@@ -4,16 +4,9 @@
 //
 // module.exports = knex(knexConfig.development);
 
-// const environment = process.env.ENVIRONMENT || 'development';
-//
-// const config = require('../knexfile')[environment];
-//
-// module.exports = require('knex')(config);
+const environment = process.env.ENVIRONMENT || 'development';
 
-const knex = require("knex");
+const config = require('../knexfile')[environment];
 
-const knexfile = require("../knexfile.js");
+module.exports = require('knex')(config);
 
-const env = process.env.DB_ENV || "development";
-
-module.exports = knex(knexfile[env]); //test

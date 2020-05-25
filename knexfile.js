@@ -4,7 +4,7 @@
 module.exports = {
 
   development: {
-    client: 'postgresql',
+    client: 'sqlite3',
     useNullAsDefault: true,
     migrations: {
       directory: './database/migrations'
@@ -13,22 +13,21 @@ module.exports = {
       filename: './database/medCabinet.sqlite3'
     }
   },
-  pool:{
-    afterCreate:(conn,done) => {
-      conn.run("PRAGMA foreign_key = ON",done)
+  pool: {
+    afterCreate: (conn, done) => {
+      conn.run("PRAGMA foreign_key = ON", done)
     }
   },
 
-  production: {
-    client: "pg",
-    connection: process.env.DATABASE_URL,
-    migrations: {
-      directory: "./data/migrations",
-    },
-    seeds: {
-      directory: "./data/seeds",
-    },
+production: {
+  client: "pg",
+      connection: process.env.DATABASE_URL,
+      migrations: {
+    directory: "./data/migrations",
   },
-};
+  seeds: {
+    directory: "./data/seeds",
+  },
+},
 
-
+}
