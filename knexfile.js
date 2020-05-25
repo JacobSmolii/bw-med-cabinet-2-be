@@ -20,11 +20,8 @@ module.exports = {
   },
 
   production: {
-    client: "sqlite3",
-    // connection: process.env.DATABASE_URL,
-    connection: {
-      database: './database/medCabinet'
-    },
+    client: "pg",
+    connection: process.env.DATABASE_URL,
     pool: {
       min: 2,
       max: 10,
