@@ -37,10 +37,11 @@ exports.up = function(knex) {
               .inTable('users')
               .onUpdate('CASCADE')
               .onDelete('CASCADE')
-          tbl.string('can_strain',128)
+
+          tbl.integer('can_strain')
               .unique()
               .notNullable()
-              .references('Strain')
+              .references('id')
               .inTable('cannabis_list')
               .onUpdate('CASCADE')
               .onDelete('CASCADE')
