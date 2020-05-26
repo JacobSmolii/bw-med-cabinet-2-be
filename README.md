@@ -39,7 +39,27 @@ way:
 
 ```
 {
- "message": "Welcome back Vlad"
+	"message": "Welcome back Vlad"
+}
+```
+
+### PUT `/api/med_cab/:id`
+
+To access this endpoint, you must be logged in.
+
+Make a put request to `/api/med_cab/:id` with JSON in the following format to change name of the user:
+
+```
+{
+	"name": "Vlad"
+}
+```
+
+After you submit PUT request `/api/med_cab/:id`, you will receive the following message:
+
+```
+{ 
+	message: "User information updated" 
 }
 ```
 
@@ -47,7 +67,7 @@ way:
 
 GET all canabis list
 
-You can see the response only if you are authorized(logged in)
+To access this endpoint, you must be logged in.
 
 ```
 {
