@@ -13,6 +13,7 @@ exports.up = function(knex) {
       })
 
       .createTable('cannabis_list',tbl => {
+          tbl.increments();
           tbl.string('Strain',128)
               .notNullable();
           tbl.string('Type',128)

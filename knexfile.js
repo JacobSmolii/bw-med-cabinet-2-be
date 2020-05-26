@@ -1,6 +1,5 @@
 // Update with your config settings.
 
-
 module.exports = {
 
   development: {
@@ -26,7 +25,7 @@ production: {
     directory: "./database/migrations",
   },
   seeds: {
-    directory: "./seeds",
+    directory: "./seeds",// test
   },
 },
 
