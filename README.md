@@ -146,7 +146,7 @@ After succes request you will get response
 }
 ```
 
-### GET /api/med_cab/:id/treated"
+### GET "/api/med_cab/:id/treated"
 
 To access this endpoint, you must be logged in.
 
