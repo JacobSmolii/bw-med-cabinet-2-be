@@ -19,7 +19,7 @@ following way:
 
 ```
 {
-  "message": "Vlad enjoy the App",
+	"message": "Vlad enjoy the App",
 }
 ```
 
@@ -63,6 +63,20 @@ After you submit PUT request `/api/med_cab/:id`, you will receive the following 
 }
 ```
 
+
+### DELETE `/api/med_cab/:id`
+
+To access this endpoint, you must be logged in.
+
+Make a delete request to `/api/med_cab/:id` and you will receive a response formatted in the following way:
+
+```
+{
+	message: `User ${id} has been  deleted`
+}
+
+```
+
 ### GET `/api/med_cab/` 
 
 GET all canabis list
@@ -89,4 +103,58 @@ You can choose what type of cannabis you want to see and filter it by
 	"Type": "indica" or ( "Type": "sativa" or "Type": "hybrid" )
 }
 ```
+
+### POST  `/api/med_cab/:id` 
+
+User can add like Strain of canabis.
+
+To access this endpoint, you must be logged in.
+
+After like has been successfully added you will get message:
+
+```
+{ 
+message: `You liked ${data.strain}`
+}
+```
+
+### GET `/api/med_cab/:id/liked` 
+
+User can see what user has liked 
+
+To access this endpoint, you must be logged in.
+
+After requst you will get message:
+
+```
+{
+ 	  "liked": ["4K Gold"]
+}
+```
+
+### POST  `/api/med_cab/:id/liked/:liked_id` 
+
+User can add ailments they treated by specific type of canabis
+
+To access this endpoint, you must be logged in.
+
+After succes request you will get response 
+
+```
+{ 
+	message: 'Thank you for your feedback'
+}
+```
+
+### GET /api/med_cab/:id/treated"
+
+To access this endpoint, you must be logged in.
+
+Here user can see what ailments they treated
+
+
+After succes request you will see the treated way of cannabis types user has been added
+
+
+
 
