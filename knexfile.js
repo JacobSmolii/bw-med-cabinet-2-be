@@ -28,5 +28,4 @@ production: {
     directory: "./seeds",// test
   },
 },
-
 }
