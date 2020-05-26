@@ -40,8 +40,8 @@ way:
 ```
 {
  "message": "Welcome back Vlad"
-```
 }
+```
 
 ### GET `/api/med_cab/` 
 
@@ -49,6 +49,7 @@ GET all canabis list
 
 You can see the response only if you are authorized(logged in)
 
+```
 {
       "Strain": "00-Og",
       "Type": "hybrid",
@@ -57,12 +58,15 @@ You can see the response only if you are authorized(logged in)
       "Flavor": "Earthy,Sweet,Citrus",
       "Description": "$100 OG is a 50/50 hybrid strain that...
 }
+```
 
 ### POST `/api/med_cab/` 
 
 You can choose what type of cannabis you want to see and filter it by 
+
+```
 {
 	"Type": "indica" or ( "Type": "sativa" or "Type": "hybrid" )
- }
-
+}
+```
 
