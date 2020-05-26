@@ -26,7 +26,7 @@ production: {
     directory: "./database/migrations",
   },
   seeds: {
-    directory: "./database/seeds",
+    directory: "./seeds",
   },
 },
 
